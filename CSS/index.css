@@ -1,7 +1,12 @@
 
 #Menu_text 
 {
-	background-color: green ;
+	background: url("../assets/japan.jpg") ;
+	background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  height: 400px;
 	text-align: center;
 	color: white;
 	padding: 80px;
