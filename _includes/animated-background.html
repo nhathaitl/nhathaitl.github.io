@@ -1,0 +1,26 @@
+<div id="animation" aria-hidden="true">
+  {% for i in (1..30) %}
+    <div class="animation-circle"></div>
+  {% endfor %}
+</div>
+
+<script>
+  (function () {
+    var btn = document.getElementById('animation-toggle');
+    if (!btn) return;
+
+    function syncBtn(off) {
+      btn.style.opacity = off ? '0.35' : '';
+      btn.setAttribute('aria-pressed', off ? 'false' : 'true');
+      btn.setAttribute('aria-label', off ? 'Enable Animation' : 'Disable Animation');
+    }
+
+    syncBtn(document.documentElement.classList.contains('animation-off'));
+
+    btn.addEventListener('click', function () {
+      var off = document.documentElement.classList.toggle('animation-off');
+      localStorage.setItem('animation-enabled', off ? 'false' : 'true');
+      syncBtn(off);
+    });
+  })();
+</script>

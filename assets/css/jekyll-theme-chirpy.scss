@@ -1,0 +1,51 @@
+---
+---
+
+/* prettier-ignore */
+@use 'main
+{%- if jekyll.environment == 'production' -%}
+  .bundle
+{%- endif -%}
+';
+
+@import "animation";
+@import "card-hover";
+
+#sidebar {
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0)),
+    url("https://images-assets.nasa.gov/image/KSC-20240928-PH-KLS03_0026/KSC-20240928-PH-KLS03_0026~medium.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center top;
+}
+
+
+#sidebar {
+
+  .site-title,
+  .site-subtitle,
+  .nav-link {
+    color: #ffffff;
+  }
+
+  .site-title {
+    transition: color 0.2s ease;
+
+    &:hover {
+      color: #f6d6a0;
+    }
+  }
+
+  ul li.nav-item>a.nav-link {
+    transition: transform 0.2s ease, color 0.2s ease;
+
+    &:hover {
+      transform: translateX(4px);
+    }
+  }
+}
+
+html.animation-off #animation {
+  display: none;
+}
